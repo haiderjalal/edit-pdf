@@ -3,6 +3,7 @@
 import { Loader2 } from "lucide-react";
 import { useEffect, useRef } from "react";
 
+import { Brand, PoweredByMusme } from "@/components/Brand";
 import { Dropzone } from "@/components/Dropzone";
 
 import { downloadPdf } from "../actions";
@@ -77,14 +78,20 @@ export function Editor() {
             <Loader2 className="animate-spin" /> Opening your PDF…
           </p>
         ) : (
-          <div className="w-full max-w-xl">
+          <div className="flex w-full max-w-xl flex-col items-center">
+            <div className="mb-6">
+              <Brand />
+            </div>
             <h1 className="mb-4 text-center text-2xl font-semibold text-slate-800">Edit a PDF</h1>
-            <Dropzone accept="application/pdf,.pdf" hint="PDF files up to 100 MB" onFile={(f) => useEditor.getState().open(f)} />
+            <div className="w-full">
+              <Dropzone accept="application/pdf,.pdf" hint="PDF files up to 100 MB" onFile={(f) => useEditor.getState().open(f)} />
+            </div>
             {error && (
               <p role="alert" className="mt-3 text-center text-sm text-red-600">
                 {error}
               </p>
             )}
+            <PoweredByMusme className="mt-6 text-sm text-slate-500" />
           </div>
         )}
       </main>

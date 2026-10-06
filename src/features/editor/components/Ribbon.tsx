@@ -35,8 +35,9 @@ import {
   Download,
   type LucideIcon,
 } from "lucide-react";
-import Link from "next/link";
 import { useRef, useState } from "react";
+
+import { Brand } from "@/components/Brand";
 
 import { FONT_LABEL } from "@/lib/pdf/layout";
 import type { FontFamily, Tool } from "@/lib/pdf/types";
@@ -131,11 +132,9 @@ export function Ribbon({ onOpen, onClose }: { onOpen: () => void; onClose: () =>
 
   return (
     <header className="shrink-0 border-b border-slate-300 bg-white">
-      <div className="flex items-center gap-3 bg-blue-700 px-3 py-1.5 text-white">
-        <Link href="/" className="flex items-center gap-1.5 font-semibold">
-          <FileText size={18} /> PDFDesk
-        </Link>
-        <span className="truncate text-sm text-blue-100" title={s.fileName}>
+      <div className="flex items-center gap-3 bg-black px-3 py-1.5 text-white">
+        <Brand tone="light" size={24} />
+        <span className="hidden truncate text-sm text-slate-400 sm:inline" title={s.fileName}>
           {s.fileName}.pdf
         </span>
         <div className="ml-auto flex items-center gap-2">
@@ -143,7 +142,7 @@ export function Ribbon({ onOpen, onClose }: { onOpen: () => void; onClose: () =>
             type="button"
             onClick={() => run("word")}
             disabled={!!busy}
-            className="hidden items-center gap-1.5 rounded px-3 py-1 text-sm hover:bg-blue-600 disabled:opacity-60 sm:flex"
+            className="hidden items-center gap-1.5 rounded px-3 py-1 text-sm hover:bg-white/10 disabled:opacity-60 sm:flex"
           >
             {busy === "word" ? <Loader2 size={15} className="animate-spin" /> : <FileText size={15} />} Export to Word
           </button>
@@ -151,7 +150,7 @@ export function Ribbon({ onOpen, onClose }: { onOpen: () => void; onClose: () =>
             type="button"
             onClick={() => run("pdf")}
             disabled={!!busy}
-            className="flex items-center gap-1.5 rounded bg-white px-3 py-1 text-sm font-medium text-blue-700 hover:bg-blue-50 disabled:opacity-60"
+            className="flex items-center gap-1.5 rounded bg-musme px-3 py-1 text-sm font-medium text-black hover:brightness-95 disabled:opacity-60"
           >
             {busy === "pdf" ? <Loader2 size={15} className="animate-spin" /> : <Download size={15} />} Download PDF
           </button>

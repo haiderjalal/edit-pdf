@@ -2,6 +2,8 @@
 
 @theme inline {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  /* Musme brand mint, sampled from the logo */
+  --color-musme: #6ceec0;
 }
 
 body {

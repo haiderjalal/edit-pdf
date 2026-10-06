@@ -1,5 +1,7 @@
-import { FileText, Lock } from "lucide-react";
+import { Lock } from "lucide-react";
 import Link from "next/link";
+
+import { Brand, MUSME_URL } from "./Brand";
 
 const NAV = [
   { href: "/edit", label: "Edit PDF" },
@@ -12,9 +14,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
     <div className="flex min-h-screen flex-col bg-slate-50 text-slate-900">
       <header className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-2 px-4 py-3">
-          <Link href="/" className="flex items-center gap-2 text-lg font-semibold text-blue-700">
-            <FileText /> PDFDesk
-          </Link>
+          <Brand />
           <nav aria-label="Tools" className="flex gap-4 text-sm font-medium text-slate-600">
             {NAV.map((n) => (
               <Link key={n.href} href={n.href} className="hover:text-blue-700">
@@ -26,9 +26,18 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       </header>
       <div className="flex-1">{children}</div>
       <footer className="border-t border-slate-200 bg-white">
-        <p className="mx-auto flex max-w-6xl items-center gap-2 px-4 py-4 text-sm text-slate-500">
-          <Lock size={14} /> No sign-up. PDFs you edit never leave your browser; files sent for conversion are deleted right after.
-        </p>
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <p className="flex items-center gap-2">
+            <Lock size={14} /> No sign-up. Editing happens in your browser; files sent to our server are deleted right after.
+          </p>
+          <p>
+            PDFDesk is a product of{" "}
+            <a href={MUSME_URL} target="_blank" rel="noopener" className="font-medium text-slate-700 hover:underline">
+              Musme
+            </a>{" "}
+            · © {new Date().getFullYear()} musme.co
+          </p>
+        </div>
       </footer>
     </div>
   );

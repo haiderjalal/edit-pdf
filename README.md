@@ -1,6 +1,8 @@
-# PDFDesk
+# PDFDesk by Musme
 
-A no-login web app to **edit PDFs like a Word document** and convert **PDF ⇄ Word**.
+<img src="public/brand/musme-logo.jpg" alt="Musme" width="64" />
+
+A product of [Musme](https://musme.co). A no-login web app to **edit PDFs like a Word document** and convert **PDF ⇄ Word**.
 
 ## Features
 

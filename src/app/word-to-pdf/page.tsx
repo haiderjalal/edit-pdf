@@ -4,7 +4,7 @@ import { Converter } from "@/components/Converter";
 import { ToolPage } from "@/components/SiteShell";
 
 export const metadata: Metadata = {
-  title: "Word to PDF Converter — PDFDesk",
+  title: "Word to PDF Converter — PDFDesk by Musme",
   description: "Convert DOCX, DOC, RTF or ODT documents to PDF with accurate layout. Free, no sign-up.",
 };
 

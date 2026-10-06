@@ -1,6 +1,7 @@
 import { FileOutput, FileText, PencilLine } from "lucide-react";
 import Link from "next/link";
 
+import { MUSME_URL } from "@/components/Brand";
 import { HomeUpload } from "@/components/HomeUpload";
 import { SiteShell } from "@/components/SiteShell";
 
@@ -30,6 +31,14 @@ export default function Home() {
     <SiteShell>
       <main>
         <section className="mx-auto max-w-3xl px-4 pt-14 pb-10 text-center">
+          <a
+            href={MUSME_URL}
+            target="_blank"
+            rel="noopener"
+            className="mb-5 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-sm text-slate-600 hover:border-slate-300"
+          >
+            <span className="h-2 w-2 rounded-full bg-musme" aria-hidden /> A Musme product · musme.co
+          </a>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Edit PDFs like a Word document</h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-slate-600">
             Free, fast and private. No account needed — just upload and start editing.
